@@ -37,9 +37,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-# Rdio and Spotify gems
-gem 'rdio'
-gem "spotify", "~> 12.3.0"
 
 # For services/http_utils.rb
 gem 'addressable', '>=2.3.1'
