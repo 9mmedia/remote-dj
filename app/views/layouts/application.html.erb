@@ -14,6 +14,9 @@
 <div class="app-wrapper">
 
   <div class="app-header">
+    <div class="app-logo">
+      9m DJ
+    </div>
     <%= form_tag '/search', method: 'get' do %>
       <%= text_field_tag :q, params[:q], placeholder: "Search songs...", class: 'search-field' %>
       <%= submit_tag 'Go', name: nil, class: 'btn hidden' %>
