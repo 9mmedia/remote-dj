@@ -48,6 +48,17 @@ img {
   padding: 1em;
 }
 
+.app-logo {
+  float: left;
+  width: 4em;
+}
+
+.search-field {
+  @include box-sizing(border-box);
+  padding: 4px;
+  width: 100%;
+}
+
 .app-main-content {
   background-color: #eee;
   position: relative;
