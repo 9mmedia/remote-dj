@@ -11,7 +11,17 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="app-wrapper">
+
+  <div class="app-header">
+    <form>
+      <input id="search-field" type="text" placeholder="Search for songs..." value="">
+    </form>
+  </div>
+
+  <%= yield %>
+
+</div>
 
 <%= javascript_include_tag "application" %>
 
