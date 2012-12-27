@@ -165,16 +165,18 @@ img {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries for Responsive Design.
+   Theses override the primary ('mobile first') styles.
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+  .app-wrapper {
+    margin: 0 auto;
+    width: 600px;
+  }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
+  /* Style adjustments for high resolution devices */
 }
