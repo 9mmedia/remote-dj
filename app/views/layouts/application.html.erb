@@ -14,9 +14,10 @@
 <div class="app-wrapper">
 
   <div class="app-header">
-    <form>
-      <input id="search-field" type="text" placeholder="Search for songs..." value="">
-    </form>
+    <%= form_tag '/search', method: 'get' do %>
+      <%= text_field_tag :q, params[:q], placeholder: "Search songs...", class: 'search-field' %>
+      <%= submit_tag 'Go', name: nil, class: 'btn hidden' %>
+    <% end %>
   </div>
 
   <%= yield %>
