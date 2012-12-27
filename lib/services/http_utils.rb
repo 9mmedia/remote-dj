@@ -1,4 +1,5 @@
 require 'addressable/uri'
+require 'net/http'
 
 module Services
   module HttpUtils
