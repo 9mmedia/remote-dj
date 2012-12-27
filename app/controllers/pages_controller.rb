@@ -4,4 +4,12 @@ class PagesController < ApplicationController
     
   end
 
+  def now_playing
+    
+  end
+
+  def up_next
+    
+  end
+
 end
