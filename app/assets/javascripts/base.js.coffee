@@ -25,6 +25,10 @@ $(document)
 
       , 500)
 
+  .on 'keydown', '#q', (event) ->
+    if event.keyCode is 27
+      $(this).val('').trigger('input')
+
   .on 'click', '.search-result', (event) ->
     message = $('.js-song-queued').addClass('show')
     $(this).addClass('queued')
