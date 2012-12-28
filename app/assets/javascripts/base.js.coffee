@@ -13,7 +13,6 @@ $(document)
       jqXHR.abort() if jqXHR
 
       searchTimer = setTimeout( ->
-
         jqXHR = $.ajax
           url: '/search'
           data:
@@ -22,7 +21,6 @@ $(document)
             console.log('error searching')
           success: (data) ->
             searchResults.html(data)
-
       , 500)
 
   .on 'keydown', '#q', (event) ->
@@ -30,8 +28,20 @@ $(document)
       $(this).val('').trigger('input')
 
   .on 'click', '.search-result', (event) ->
-    message = $('.js-song-queued').addClass('show')
-    $(this).addClass('queued')
-    setTimeout( ->
-      message.removeClass('show')
-    , 1000)
+    element = $(this)
+    $.ajax
+      url: '/queue'
+      type: 'POST'
+      data:
+        album: element.data('album')
+        'artists[]': element.data('artist')
+        title: element.data('title')
+        url: element.data('url')
+      error: (xhr) ->
+        console.log('error queueing song')
+      success: (data) ->
+        element.addClass('queued')
+        message = $('.js-song-queued').addClass('show')
+        setTimeout( ->
+          message.removeClass('show')
+        , 1000)
