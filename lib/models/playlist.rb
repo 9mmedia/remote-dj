@@ -1,4 +1,5 @@
 require 'securerandom'
+require 'models/track'
 
 module Models
   
