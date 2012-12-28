@@ -19,14 +19,16 @@
   <% end %>
 
   <h1>Up Next</h1>
+  <ol>
   <% @next_tracks.each do |track| %>
-    <div class="media-item">
+    <li class="media-item">
       <img class="img" width="50" height="50">
       <div class="content">
         <span class="song-name"><%= track.title %></span>
         <span class="band-name"><%= track.artists.first %></span> - 
         <span class="album-name"><%= track.album %></span>
       </div>
-    </div>
+    </li>
   <% end if @next_tracks %>
+  </ol>
 </div>
