@@ -110,6 +110,7 @@ img {
 }
 
 h1 {
+  color: #4C575B;
   font-size: 1.2em;
 }
 
@@ -126,9 +127,13 @@ h1 {
 
 .playlist {
   padding: 1em;
-  
+
   .media-item {
     margin-bottom: 1em;
+  }
+  
+  .media-item:last-child {
+    margin-bottom: 2em;
   }
 }
 
