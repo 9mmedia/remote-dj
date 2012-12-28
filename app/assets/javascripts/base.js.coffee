@@ -3,8 +3,6 @@ jqXHR = null
 
 $(document)
   .on 'input', '#q', (event) ->
-    console.log('search field input')
-
     searchResults = $('.js-search-results')
     searchQuery = $(this).val()
 
