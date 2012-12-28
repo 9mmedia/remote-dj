@@ -2,6 +2,10 @@
    Element Defaults
    ========================================================================== */
 
+* {
+  @include box-sizing(border-box);
+}
+
 html,
 button,
 input,
@@ -37,7 +41,6 @@ img {
 }
 
 .search-field {
-  @include box-sizing(border-box);
   padding: 4px;
   width: 100%;
 }
