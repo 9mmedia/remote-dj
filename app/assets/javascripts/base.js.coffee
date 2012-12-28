@@ -28,5 +28,8 @@ $(document)
       , 500)
 
   .on 'click', '.search-result', (event) ->
-    console.log('search result selected')
-    # show a drop down message that song was queued (TweetBot style)
+    message = $('.js-song-queued').addClass('show')
+    $(this).addClass('queued')
+    setTimeout( ->
+      message.removeClass('show')
+    , 1000)
