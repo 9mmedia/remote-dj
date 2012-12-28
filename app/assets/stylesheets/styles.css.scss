@@ -15,6 +15,7 @@ textarea {
 }
 
 body {
+  background: #f8f8f5;
   font-size: 1em;
   line-height: 1.4;
 }
@@ -28,12 +29,14 @@ img {
    ========================================================================== */
 
 .app-wrapper {
+  border: 1px solid #ccb;
+  border-width: 0 1px;
   padding-top: 5em; /* match app-header height to account for fixed position */
 }
 
 .app-header {
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  background-color: #42474a;
+  color: #99a;
   height: 5em;
   left: 0;
   padding: 0.7em 1em;
@@ -54,14 +57,16 @@ img {
 }
 
 .search-results {
+  border-top: 1px solid #d9d9d9;
+
   .search-result {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #d9d9d9;
     padding: 0.6em 1em;
     position: relative;
 
     &.queued:after {
-      background-color: #ccc;
-      border: 1px solid #aaa;
+      background-color: #d6d9dB;
+      color: #555;
       content: "Queued";
       display: inline-block;
       font-size: 0.8em;
@@ -74,7 +79,6 @@ img {
 }
 
 .app-main-content {
-  background-color: #eee;
   position: relative;
 }
 
