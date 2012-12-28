@@ -1,13 +1,15 @@
 <div class="playlist">
   <h1>Now Playing</h1>
   <% if @current_track %>
-    <div class="media-item">
-      <img class="img" width="50" height="50">
-      <div class="content">
-        <span class="song-name"><%= @current_track.title %></span>
-        <span class="band-album-name"><%= @current_track.artists.first %> - <%= @current_track.album %></span>
-      </div>
-    </div>
+    <ol>
+      <li class="media-item">
+        <img class="img" width="50" height="50">
+        <div class="content">
+          <span class="song-name"><%= @current_track.title %></span>
+          <span class="band-album-name"><%= @current_track.artists.first %> - <%= @current_track.album %></span>
+        </div>
+      </li>
+    </ol>
   <% end %>
 
   <h1>Up Next</h1>
