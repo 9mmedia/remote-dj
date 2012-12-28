@@ -22,7 +22,11 @@ module Models
     def save
       @@lock.synchronize do 
       	@id ||= SecureRandom.uuid
-      	Rails.cache.write("playlist:#{@id}", self)
+        # Create new cache version
+      	@cache_version = SecureRandom.uuid
+        Rails.cache.write("playlist:#{@id}", self)
+        # Update cache version
+        Rails.cache.write("playlist:#{@id}:version", @cache_version)
       end
     end
 
@@ -31,11 +35,16 @@ module Models
       	Thread.current[:reloading] = true
         @@lock.synchronize do 
       	  if (@id)
-      	    list = Rails.cache.read("playlist:#{@id}")
-      	    if (list)
-      	      @tracks = list.tracks
-      	      @current_track_index = list.current_track_index
-      	    end
+            # Check cache version first
+            version = Rails.cache.read("playlist:#{@id}:version")
+            if (version && (version != @cache_version))
+              @cache_version = version
+              list = Rails.cache.read("playlist:#{@id}")
+        	    if (list)
+        	      @tracks = list.tracks
+        	      @current_track_index = list.current_track_index
+        	    end
+            end
       	  end
         end
         Thread.current[:reloading] = false

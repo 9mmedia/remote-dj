@@ -75,6 +75,11 @@ describe Models::Playlist do
   	default.tracks.count.should == 3
   	default.current_track.title.should == "(I Know) I'm Losing You"
 
+    default.tracks.slice(0,3)
+    default.tracks.slice(0,10)
+    default.tracks.slice(0,3)
+    default.tracks.slice(0,10)
+
   end
 
 
