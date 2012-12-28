@@ -10,7 +10,7 @@ module Services
   	# @params
   	# q:: A query string (e.g., 'Elvis', 'Rolling Stones', 'Stairway to Heaven'). Required.
   	# page:: The page number of results to return.  Defaults to 1.
-  	def searchForTracks(q, page=1)
+  	def search_tracks(q, page=1)
   	  response_body = get_body(http_get("http://ws.spotify.com/search/1/track.json?q=#{CGI.escape(q)}&page=#{page}"))
   	  json = ActiveSupport::JSON.decode(response_body)
       to_tracks(json["tracks"])
