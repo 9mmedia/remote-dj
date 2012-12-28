@@ -25,6 +25,7 @@ img {
 
 .app-header {
   background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
   padding: 1em;
   position: relative; /* so notification transition it slides from underneath */
   z-index: 100; /* so notification transition it slides from underneath */
@@ -42,10 +43,8 @@ img {
 }
 
 .search-results {
-  border-bottom: 1px solid #ddd;
-
   .search-result {
-    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 0.6em 1em;
     position: relative;
 
