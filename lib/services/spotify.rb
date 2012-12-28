@@ -4,7 +4,7 @@ module Services
   	include HttpUtils
   	include Utils
 
-  	# Searches for track based on the given query string.
+  	# Searches for tracks based on the given query string.
   	# 
   	#
   	# @params
