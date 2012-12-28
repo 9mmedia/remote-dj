@@ -41,8 +41,12 @@ gem 'jquery-rails'
 # For services/http_utils.rb
 gem 'addressable', '>=2.3.1'
 
+gem 'httparty'
+gem 'json'
+
 group :development do
   gem 'rspec-rails'
+  gem 'debugger'
 end
 
 group :test do

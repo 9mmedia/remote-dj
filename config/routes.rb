@@ -60,4 +60,6 @@ RemoteDj::Application.routes.draw do
 
   root :to => 'pages#index'
 
+  match 'album_art' => 'album_art#get_album_art'
+
 end
