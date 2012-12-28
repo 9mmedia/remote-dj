@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @playlist = Models::Playlist.default
     @current_track = @playlist.current_track
     next_start_index = @playlist.current_track_index + 1
-    @next_tracks = @playlist.tracks.slice(next_start_index, [@playlist.tracks.length, 10].min)
+    @next_tracks = @playlist.tracks.slice(next_start_index, @playlist.tracks.length)
   end
 
   def queue
