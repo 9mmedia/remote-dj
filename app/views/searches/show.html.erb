@@ -2,8 +2,7 @@
   <% @results.each do |item| %>
     <li class="search-result" data-title="<%= item.title %>" data-artist="<%= item.artists.first %>" data-album="<%= item.album %>" data-url="<%= item.url %>">
       <span class="song-name"><%= item.title %></span>
-      <span class="band-name"><%= item.artists.first %></span> - 
-      <span class="album-name"><%= item.album %></span>
+      <span class="band-album-name"><%= item.artists.first %> - <%= item.album %></span>
     </li>
   <% end %>
 </ul>
