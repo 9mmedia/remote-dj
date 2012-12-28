@@ -56,10 +56,11 @@ RemoteDj::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  resource :search, :only => [:show]
-
   root :to => 'pages#index'
 
+  resource :search, :only => [:show]
+
+  post 'queue' => 'pages#queue'
   match 'album_art' => 'album_art#get_album_art'
 
 end
