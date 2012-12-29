@@ -1,21 +1,15 @@
-<div class="search-results js-search-results">
-</div>
-
-<div class="js-song-queued notification">
-  <p>Song has been queued.</p>
-</div>
-
 <div class="playlist">
   <h1>Now Playing</h1>
   <% if @current_track %>
-    <div class="media-item">
-      <img class="img" width="50" height="50">
-      <div class="content">
-        <span class="song-name"><%= @current_track.title %></span>
-        <span class="band-name"><%= @current_track.artists.first %></span> - 
-        <span class="album-name"><%= @current_track.album %></span>
-      </div>
-    </div>
+    <ol>
+      <li class="media-item">
+        <img class="img" width="50" height="50">
+        <div class="content">
+          <span class="song-name"><%= @current_track.title %></span>
+          <span class="band-album-name"><%= @current_track.artists.first %> - <%= @current_track.album %></span>
+        </div>
+      </li>
+    </ol>
   <% end %>
 
   <h1>Up Next</h1>
@@ -25,8 +19,7 @@
       <img class="img" width="50" height="50">
       <div class="content">
         <span class="song-name"><%= track.title %></span>
-        <span class="band-name"><%= track.artists.first %></span> - 
-        <span class="album-name"><%= track.album %></span>
+        <span class="band-album-name"><%= track.artists.first %> - <%= track.album %></span>
       </div>
     </li>
   <% end if @next_tracks %>
