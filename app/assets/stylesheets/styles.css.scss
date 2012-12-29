@@ -61,22 +61,16 @@ img {
   background-color: #525B61;
   border-bottom: 1px solid #424B51;
   padding: 1em;
-
-  .search-form {
-    input[type="text"] {
-      background: #fff image-url('icon-search.png') no-repeat 7px 50%;
-      border: none;
-      @include border-radius(4px);
-      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1));
-      display: inline-block;
-      outline: none;
-      padding: 6px 6px 6px 26px;
-    }
-  }
 }
 
 .search-field {
-  padding: 4px;
+  background: #fff image-url('icon-search.png') no-repeat 7px 50%;
+  border: none;
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1));
+  display: inline-block;
+  outline: none;
+  padding: 6px 6px 6px 26px;
   width: 100%;
 }
 
