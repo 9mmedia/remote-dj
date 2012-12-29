@@ -16,7 +16,7 @@
 
   <div class="app-header">
     <%= form_tag '/search', method: 'get', class: 'search-form' do %>
-      <%= text_field_tag :q, params[:q], placeholder: "Search songs and select to queue...", class: 'search-field' %>
+      <%= text_field_tag :q, params[:q], placeholder: "Search music...", class: 'search-field' %>
       <%= submit_tag 'Go', name: nil, class: 'btn hidden' %>
     <% end %>
   </div>
