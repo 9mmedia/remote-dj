@@ -85,15 +85,23 @@ img {
     padding: 0.6em 1em;
     position: relative;
 
-    &.label-queued:before {
+    &.label-queued:before,
+    &.label-queuing:before {
       background-color: #d6d9dB;
       color: #555;
-      content: "Queued";
-      display: inline-block;
+      display: block;
       float: right;
       font-size: 0.6em;
       margin-left: 1em;
       padding: 1px 4px;
+    }
+    
+    &.label-queued:before {
+      content: "Queued";
+    }
+    
+    &.label-queuing:before {
+      content: "Queuing...";
     }
   }
 }

@@ -10,7 +10,7 @@ jqXHR = null
 
 $(document)
   .on 'click', '.search-result', (event) ->
-    element = $(this)
+    element = $(this).addClass('label-queuing')
     $.ajax
       url: '/queue'
       type: 'POST'
@@ -22,7 +22,7 @@ $(document)
       error: (xhr) ->
         console.log('error queueing song')
       success: (data) ->
-        element.addClass('label-queued')
+        element.removeClass('label-queuing').addClass('label-queued')
         message = $('.js-song-queued').addClass('show')
         setTimeout( ->
           message.removeClass('show')
