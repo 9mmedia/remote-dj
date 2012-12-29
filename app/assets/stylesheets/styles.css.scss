@@ -93,6 +93,7 @@ img {
 
   .search-result {
     border-bottom: 1px solid #d9d9d9;
+    cursor: pointer;
     padding: 0.6em 1em;
 
     &.label-queued:before,
