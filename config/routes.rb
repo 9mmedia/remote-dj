@@ -62,5 +62,6 @@ RemoteDj::Application.routes.draw do
 
   post 'queue' => 'pages#queue'
   match 'album_art' => 'album_art#get_album_art'
+  get 'current_playlist' => 'pages#current_playlist'
 
 end
