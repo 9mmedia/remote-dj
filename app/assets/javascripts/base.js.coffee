@@ -5,9 +5,6 @@ if !window.location.hash and window.addEventListener
       window.scrollTo 0, 0
     , 0)
 
-searchTimer = 0
-jqXHR = null
-
 $(document)
   .on 'click', '.search-result', (event) ->
     element = $(this).addClass('label-queuing')
