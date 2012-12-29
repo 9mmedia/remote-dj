@@ -65,16 +65,15 @@ img {
     padding: 0.6em 1em;
     position: relative;
 
-    &.queued:after {
+    &.queued:before {
       background-color: #d6d9dB;
       color: #555;
       content: "Queued";
       display: inline-block;
-      font-size: 0.8em;
-      padding: 2px 4px;
-      position: absolute;
-      right: 1em;
-      top: 0.6em;
+      float: right;
+      font-size: 0.6em;
+      margin-left: 1em;
+      padding: 1px 4px;
     }
   }
 }
