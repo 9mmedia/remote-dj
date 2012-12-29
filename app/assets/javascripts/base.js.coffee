@@ -17,7 +17,8 @@ $(document)
         title: element.data('title')
         url: element.data('url')
       error: (xhr) ->
-        console.log('error queueing song')
+        element
+          .removeClass('label-queuing')
       success: (data) ->
         element
           .removeClass('label-queuing')
