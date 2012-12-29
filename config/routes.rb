@@ -64,4 +64,6 @@ RemoteDj::Application.routes.draw do
   match 'album_art' => 'album_art#get_album_art'
   get 'current_playlist' => 'pages#current_playlist'
 
+  get 'admin' => 'admin#index'
+
 end
