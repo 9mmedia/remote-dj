@@ -19,8 +19,6 @@ $(document)
       error: (xhr) ->
         console.log('error queueing song')
       success: (data) ->
-        element.removeClass('label-queuing').addClass('label-queued')
-        message = $('.js-song-queued').addClass('show')
-        setTimeout( ->
-          message.removeClass('show')
-        , 1500)
+        element
+          .removeClass('label-queuing')
+          .addClass('label-queued')
