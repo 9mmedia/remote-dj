@@ -29,19 +29,14 @@ img {
    ========================================================================== */
 
 .app-wrapper {
-  padding-top: 4em; /* match app-header height to account for fixed position */
+  
 }
 
 .app-header {
-  background-color: #42474a;
+  background-color: #515658;
+  border-bottom: 1px solid #45484d;
   color: #99a;
-  height: 4em; /* update app-wrapper top padding since header is fixed */
-  left: 0;
   padding: 1em;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 100; /* so notification transition it slides from underneath */
 
   .search-form {
     input[type="text"] {
@@ -57,6 +52,31 @@ img {
 .search-field {
   padding: 4px;
   width: 100%;
+}
+
+.notification {
+  background-color: #D6D9DB;
+  @include box-shadow(0 4px 2px -2px rgba(0, 0, 0, 0.2));
+  color: #333;
+  left: 0;
+  opacity: 0;
+  padding: 0 1em;
+  position: fixed;
+  right: 0;
+  top: -50px;
+  @include transition(opacity 0.3s ease-in-out, top 0.3s ease-in-out);
+  z-index: 2;
+
+  &.show {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+.app-main-content {
+  border: 1px solid #CCB;
+  border-width: 0 1px;
+  position: relative;
 }
 
 .search-results {
@@ -75,32 +95,6 @@ img {
       margin-left: 1em;
       padding: 1px 4px;
     }
-  }
-}
-
-.app-main-content {
-  border: 1px solid #CCB;
-  border-width: 0 1px;
-  position: relative;
-}
-
-.notification {
-  background-color: #D6D9DB;
-  @include box-shadow(0 4px 2px -2px rgba(0, 0, 0, 0.2));
-  left: 0;
-  min-height: 3em;
-  opacity: 0;
-  padding: 0 1em;
-  position: fixed;
-  right: 0;
-  top: 0; /* remains hidden since app-header is also position fixed */
-  @include transition(top 0.3s ease, opacity 0.3s ease, z-index 0.3s ease);
-  z-index: -5;
-
-  &.show {
-    opacity: 1;
-    top: 4em;
-    z-index: 10;
   }
 }
 
