@@ -65,7 +65,7 @@ img {
     padding: 0.6em 1em;
     position: relative;
 
-    &.queued:before {
+    &.label-queued:before {
       background-color: #d6d9dB;
       color: #555;
       content: "Queued";
