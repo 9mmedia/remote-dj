@@ -95,6 +95,7 @@ img {
     &.label-queued:before,
     &.label-queuing:before {
       background-color: #688594;
+      @include border-radius(2px);
       color: #fff;
       display: block;
       float: right;
