@@ -35,19 +35,15 @@ img {
 .app-header {
   background-color: #42474a;
   color: #99a;
-  display: table; /* so we can vertically center the search input */
   height: 4em; /* update app-wrapper top padding since header is fixed */
   left: 0;
-  padding: 0 1em;
+  padding: 1em;
   position: fixed;
   right: 0;
   top: 0;
   z-index: 100; /* so notification transition it slides from underneath */
 
   .search-form {
-    display: table-cell;
-    vertical-align: middle;
-
     input[type="text"] {
       border: none;
       border-radius: 3px;
