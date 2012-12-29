@@ -1,3 +1,10 @@
+# Hide address bar in iOS Safari (http://24ways.org/2011/raising-the-bar-on-mobile/)
+if !window.location.hash and window.addEventListener
+  window.addEventListener "load", ->
+    setTimeout( ->
+      window.scrollTo 0, 0
+    , 0)
+
 searchTimer = 0
 jqXHR = null
 
