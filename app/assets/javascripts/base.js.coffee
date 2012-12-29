@@ -44,4 +44,4 @@ $(document)
         message = $('.js-song-queued').addClass('show')
         setTimeout( ->
           message.removeClass('show')
-        , 1000)
+        , 1500)
