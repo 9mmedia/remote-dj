@@ -27,6 +27,31 @@ img {
    Application Styles
    ========================================================================== */
 
+.btn {
+  @include vertical-gradient(#f0f0f0, #e1e1e1);
+  border: 1px solid #c5c5c5;
+  @include border-radius(3px);
+  color: #3a3a3a;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  padding: 5px 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  @include vertical-gradient(#f0f0f0, #cfcfcf);
+  color: #3a3a3a;
+  text-decoration: none;
+  @include transition(background 0.1s linear);
+}
+
+.btn:active {
+  @include vertical-gradient(#cfcfcf, #dfdfdf);
+  color: #3a3a3a;
+}
+
 .app-wrapper {
   
 }
@@ -94,11 +119,11 @@ img {
       margin-left: 1em;
       padding: 1px 4px;
     }
-    
+
     &.label-queued:before {
       content: "Queued";
     }
-    
+
     &.label-queuing:before {
       content: "Queuing...";
     }
