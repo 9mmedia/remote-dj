@@ -1,5 +1,5 @@
 <div class="search-results">
-  <div style="background-color: #eee;border-bottom:1px solid #ddd;padding: 0.5em 1em;">
+  <div style="background-color: #eee;border-bottom:1px solid #ddd;color: #666;font-size: 0.8em;padding: 0.5em 1.2em;">
     Found <%= pluralize @results.length, 'result' %>.
   </div>
   <ul>
@@ -10,7 +10,7 @@
       </li>
     <% end %>
   </ul>
-  <div style="background-color:#eee;border-top:1px solid #ddd;position:fixed;bottom:0;left:0;right:0;padding:1em;text-align:center;">
+  <div style="background-color:#f4f4f4;border-top:1px solid #ddd;position:fixed;bottom:0;left:0;right:0;padding:1em;text-align:center;">
     <%= link_to 'Done', root_path, class: 'btn' %>
   </div>
 </div>
