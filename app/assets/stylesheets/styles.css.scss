@@ -58,8 +58,8 @@ img {
 }
 
 .app-header {
-  background-color: #515658;
-  border-bottom: 1px solid #45484d;
+  background-color: #525B61;
+  border-bottom: 1px solid #424B51;
   color: #99a;
   padding: 1em;
 
@@ -86,7 +86,7 @@ img {
 .search-results {
   .help-info {
     background-color: #eee;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #d9d9d9;
     color: #666;
     font-size: 0.8em;
     padding: 0.5em 1.2em;
@@ -99,8 +99,8 @@ img {
 
     &.label-queued:before,
     &.label-queuing:before {
-      background-color: #d6d9dB;
-      color: #555;
+      background-color: #688594;
+      color: #fff;
       display: block;
       float: right;
       font-size: 0.8em;
