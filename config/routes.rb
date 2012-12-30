@@ -64,6 +64,7 @@ RemoteDj::Application.routes.draw do
   match 'album_art' => 'album_art#get_album_art'
   get 'current_playlist' => 'pages#current_playlist'
 
-  get 'admin' => 'admin#index'
+  get 'admin' => 'admin#index', as: :admin_index
+  post 'admin/delete_tracks' => 'admin#delete_tracks'
 
 end

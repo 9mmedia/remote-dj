@@ -1,0 +1,25 @@
+<div class="playlist-admin js-playlist-admin">
+  <h1>Up Next</h1>
+  <% if @tracks && @tracks.present? %>
+    <%= form_tag 'admin/delete_tracks', method: 'post' do %>
+      <ol>
+      <% @tracks.each do |track| %>
+        <li class="media-item">
+          <div class="img">
+            <%= check_box_tag 'trackIds[]', track.url, false, id: track.url %>
+          </div>
+          <div class="content">
+            <%= label_tag track.url do %>
+              <span class="song-name"><%= track.title %></span>
+              <span class="band-album-name"><%= track.artists.first %> - <%= track.album %></span>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+      </ol>
+      <p><%= submit_tag 'Delete Selected', name: nil, class: 'btn' %></p>
+    <% end %>
+  <% else %>
+    <p>No songs in playlist.</p>
+  <% end %>
+</div>
