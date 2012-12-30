@@ -125,9 +125,9 @@ module Models
     end
 
     # Returns the index of the given track in the playlist, or nil if the track was not found.
-    def index(track)
+    def index(url)
       reload
-      @tracks.map(&:url).index(track.url)
+      @tracks.map(&:url).index(url)
     end
   end
 end
