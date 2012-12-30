@@ -25,12 +25,4 @@ class PagesController < ApplicationController
     render :json => current_playlist
   end
 
-  def now_playing
-    
-  end
-
-  def up_next
-    
-  end
-
 end
