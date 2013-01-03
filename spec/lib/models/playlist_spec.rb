@@ -36,9 +36,9 @@ describe Models::Playlist do
 
   it "should support an index method" do
   	playlist = Models::Playlist.new(@tracks)
-    playlist.index(@tracks[0]).should == 0
-    playlist.index(@tracks[2]).should == 2
-    playlist.index(@tracks[1]).should == 1
+    playlist.index(@tracks[0].url).should == 0
+    playlist.index(@tracks[2].url).should == 2
+    playlist.index(@tracks[1].url).should == 1
   end
 
   it "should set the current track with a song already in the list" do
@@ -74,11 +74,6 @@ describe Models::Playlist do
   	default = Models::Playlist.default
   	default.tracks.count.should == 3
   	default.current_track.title.should == "(I Know) I'm Losing You"
-
-    default.tracks.slice(0,3)
-    default.tracks.slice(0,10)
-    default.tracks.slice(0,3)
-    default.tracks.slice(0,10)
 
   end
 

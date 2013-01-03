@@ -67,15 +67,17 @@ module Models
 
     # Sets the current track in this playlist to the given track.  Will add the track to to the playlist if it isn't already included.
     def current_track=(track)
-      reload
-      idx = index(track)
-      if (idx)
-      	@current_track_index = idx
-      else
-      	add_track(track)
-      	@current_track_index = @tracks.count - 1
+      if (track)
+        reload
+        idx = index(track.url)
+        if (idx)
+      	  @current_track_index = idx
+        else
+      	  add_track(track)
+      	  @current_track_index = @tracks.count - 1
+        end
+        save
       end
-      save
     end
 
     # Returns the current track index
