@@ -11,11 +11,11 @@ describe Models::Playlist do
     ]
 
     # Clear cache
-    Rails.cache.clear
+    Rails.cache.delete_matched(/.*/, {:namespace => Rails.env})
   end
 
   after(:each) do
-  	Rails.cache.clear
+  	Rails.cache.delete_matched(/.*/, {:namespace => Rails.env})
   end
 
   it "should initialize a playlist with an an array of tracks" do
@@ -76,6 +76,5 @@ describe Models::Playlist do
   	default.current_track.title.should == "(I Know) I'm Losing You"
 
   end
-
 
 end

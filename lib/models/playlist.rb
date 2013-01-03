@@ -1,5 +1,4 @@
 require 'securerandom'
-require 'models/track'
 
 module Models
   
@@ -25,22 +24,22 @@ module Models
       	@id ||= SecureRandom.uuid
         # Create new cache version
       	@cache_version = SecureRandom.uuid
-        Rails.cache.write("playlist:#{@id}", self)
+        Rails.cache.write(cache_key, self, {:namespace => Rails.env})
         # Update cache version
-        Rails.cache.write("playlist:#{@id}:version", @cache_version)
+        Rails.cache.write(cache_version_key, @cache_version, {:namespace => Rails.env})
       end
     end
 
     def reload
-      if (Thread.current[:reloading] != true)
-      	Thread.current[:reloading] = true
-        @@lock.synchronize do 
-      	  if (@id)
+      if (!caller.any?{|c| c =~ /\/playlist\.rb.*`reload'/})  # Check for recursion
+        require_dependency 'lib/models/track'
+      	@@lock.synchronize do 
+          if (@id)
             # Check cache version first
-            version = Rails.cache.read("playlist:#{@id}:version")
+            version = Rails.cache.read(cache_version_key, {:namespace => Rails.env})
             if (version && (version != @cache_version))
               @cache_version = version
-              list = Rails.cache.read("playlist:#{@id}")
+              list = Rails.cache.read(cache_key, {:namespace => Rails.env})
         	    if (list)
         	      @tracks = list.tracks
         	      @current_track_index = list.current_track_index
@@ -48,7 +47,6 @@ module Models
             end
       	  end
         end
-        Thread.current[:reloading] = false
       end
     end
 
@@ -130,6 +128,16 @@ module Models
     def index(url)
       reload
       @tracks.map(&:url).index(url)
+    end
+
+    private
+
+    def cache_key
+      "playlist:#{@id}"
+    end
+
+    def cache_version_key
+      "playlist:#{@id}:version"
     end
   end
 end

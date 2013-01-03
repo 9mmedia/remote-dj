@@ -13,7 +13,7 @@ class AdminController < ApplicationController
       index = @playlist.index id
       @playlist.tracks.delete_at index
     end
-
+    
     @playlist.save
 
     redirect_to admin_index_path
